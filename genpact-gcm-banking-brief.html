@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Genpact · Global Customer Manager — Banking · Recruiter Brief</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0b1f1e;
+      --ink-soft: #3d5553;
+      --teal-deep: #0f3d3a;
+      --teal: #0f766e;
+      --teal-mid: #14b8a6;
+      --teal-soft: #ccfbf1;
+      --teal-wash: #f0fdfa;
+      --sand: #f7f6f2;
+      --paper: #fffcf8;
+      --line: #d7e4e1;
+      --warn: #b45309;
+      --ok: #047857;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: var(--sand); color: var(--ink); font-family: Inter, system-ui, sans-serif; line-height: 1.55; }
+    body { max-width: 920px; margin: 0 auto; padding: 28px 20px 80px; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+    header.hero {
+      background: linear-gradient(160deg, #0c2c2a 0%, #134e4a 58%, #0f766e 100%);
+      color: #f0fdfa;
+      border-radius: 20px;
+      padding: 36px 36px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero::after {
+      content: "";
+      position: absolute;
+      right: -40px; top: -40px;
+      width: 220px; height: 220px;
+      border: 18px solid rgba(20,184,166,.18);
+      border-radius: 50%;
+    }
+    .kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #99f6e4;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: clamp(26px, 4vw, 34px);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      max-width: 16ch;
+    }
+    .sub { margin-top: 14px; max-width: 58ch; color: #ccfbf1; font-size: 15px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .chip {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .04em;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(204,251,241,.25);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    section { margin-top: 28px; }
+    h2 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    @media (max-width: 720px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      header.hero { padding: 26px 22px; }
+    }
+    .stat {
+      background: var(--teal-wash);
+      border: 1px solid #99f6e4;
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .stat b { display: block; font-family: "IBM Plex Mono", monospace; font-size: 20px; color: var(--teal-deep); }
+    .stat span { font-size: 12.5px; color: var(--ink-soft); }
+    p { color: var(--ink-soft); font-size: 14.5px; }
+    .lead { color: var(--ink); font-size: 16px; }
+    ul.clean { list-style: none; }
+    ul.clean li {
+      position: relative;
+      padding-left: 16px;
+      margin: 8px 0;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+    }
+    ul.clean li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 8px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal-mid);
+    }
+    .callout {
+      border-left: 3px solid var(--teal-mid);
+      padding: 4px 0 4px 14px;
+      margin: 10px 0;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
+    .tag {
+      display: inline-block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--teal-soft);
+      color: var(--teal-deep);
+    }
+    .tag.warn { background: #ffedd5; color: #9a3412; }
+    .tag.ok { background: #d1fae5; color: #065f46; }
+    .q {
+      background: #fff;
+      border: 1px dashed #99f6e4;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 8px 0;
+      font-size: 14px;
+    }
+    .q strong { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--teal); display: block; margin-bottom: 4px; letter-spacing: .04em; }
+    footer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: #6b7c7a;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 13.5px;
+      color: #7c2d12;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="kicker">Private talking points · Recruiter screen</div>
+    <h1>Genpact<br>Global Customer Manager — Banking</h1>
+    <p class="sub">A working brief for today's virtual conversation: what the seat likely is, how you show up, what you need confirmed, and how to close the call with a clean next step.</p>
+    <div class="meta-row">
+      <span class="chip">CONFIDENTIAL · CANDIDATE USE</span>
+      <span class="chip">01 SEP 2026</span>
+      <span class="chip">VIRTUAL · RECRUITER</span>
+      <span class="chip">BANKING VERTICAL</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>01 · Meeting intent</h2>
+    <div class="card">
+      <p class="lead">This is a qualification call, not a pitch. Leave having confirmed three things: the true shape of the role, whether the commercial model matches how you create value, and whether the seat is worth a hiring-manager conversation.</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div class="stat"><b>Qualify</b><span>Role, book, travel, level, comp architecture</span></div>
+        <div class="stat"><b>Position</b><span>Strategic account growth + tech-led transformation</span></div>
+        <div class="stat"><b>Advance</b><span>Ask for HM intro + written JD + band</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>02 · Role snapshot (working model)</h2>
+    <div class="card">
+      <p>Public postings at Genpact do not list this exact title widely. Closest published analog is <em>VP / Global Relationship Manager</em> on existing accounts: grow a mapped book, partner with enterprise sales, surface consulting and managed-services transformation, and stay tight with onshore/offshore delivery. Treat the bullets below as hypotheses to confirm, not facts.</p>
+      <table style="margin-top:12px">
+        <tr><th>Dimension</th><th>Likely design</th><th>Confirm today</th></tr>
+        <tr><td>Mandate</td><td>Own growth and experience on current banking clients; mine C-level relationships; expand into AI / ATS work.</td><td>Net-new logos vs. existing book? One account or a portfolio?</td></tr>
+        <tr><td>Commercial</td><td>Quota on expansion ($5M+ books appear in GRM postings). Mix of annuity ops + higher-value Advanced Technology Solutions.</td><td>OTE split, quota, what counts as ATS vs. CBS.</td></tr>
+        <tr><td>Client type</td><td>Retail / commercial / payments banks. Genpact is a 2025 Everest Leader in Banking Operations.</td><td>Named accounts? Regulated US vs. global?</td></tr>
+        <tr><td>Motion</td><td>Relationship + solutioning with delivery, not a pure hunter and not a delivery manager.</td><td>% time with clients vs. internal. Travel %.</td></tr>
+        <tr><td>Level</td><td>Title "Manager" can map Director/VP commercially at Genpact. Do not assume IC ops.</td><td>Grade, reporting line, peer set.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>03 · Why Genpact, why now</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p class="mono" style="font-size:12px;color:var(--teal);margin-bottom:8px">COMPANY CONTEXT</p>
+        <ul class="clean">
+          <li>~$5.1–5.3B revenue; 140k+ people; 800+ clients; ~25% of Fortune Global 500.</li>
+          <li>GenpactNext: Advanced Technology Solutions (data, AI, digital, advisory, agentic) growing ~20–25% and now ~24–27% of revenue.</li>
+          <li>ATS is 2× revenue/head vs. core ops, more non-FTE commercial models.</li>
+          <li>Banking ops proof: process mining, onboarding STP, mortgage cycle time, NPS lifts (Santander UK +5 NPS in a year).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="mono" style="font-size:12px;color:var(--teal);margin-bottom:8px">WHY IT CAN FIT YOU</p>
+        <ul class="clean">
+          <li>You sell and govern technology transformation, not tickets.</li>
+          <li>Banks are under pressure to industrialize AI inside regulated operations — that is Genpact's stated 2026 story.</li>
+          <li>A Global Customer Manager seat can be the bridge between C-level intent and last-mile delivery, which is your lane.</li>
+          <li>Risk: the title can hide a pure farm / SLA role. Qualify hard.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>04 · How you show up (30-second frame)</h2>
+    <div class="card">
+      <p class="lead">"I help large enterprises turn digital infrastructure and emerging tech into governed, measurable revenue impact — typically at C-level, using a qualification discipline like MEDDICC. I am not looking for a delivery-ops seat. I am looking for an account-growth seat where the product is transformation, not headcount."</p>
+      <div class="grid-3" style="margin-top:16px">
+        <div>
+          <span class="tag">PROOF</span>
+          <p style="margin-top:8px">$50M+ revenue impact · 344% quota · IBM Growth &amp; Leadership Award · 100%+ club ×3</p>
+        </div>
+        <div>
+          <span class="tag">CRAFT</span>
+          <p style="margin-top:8px">AI/ML, cloud, data, digital infrastructure, tech governance &amp; risk, C-level engagement</p>
+        </div>
+        <div>
+          <span class="tag">LANE</span>
+          <p style="margin-top:8px">Enterprise Technology Strategy / Corporate Technology Consulting — banking as the industry canvas</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>05 · What you are looking for</h2>
+    <div class="card">
+      <p>Use this as the spine of the second half of the call. Say it in plain language. Do not apologize for the filter.</p>
+      <table>
+        <tr><th>Filter</th><th>Must be true</th><th>Walk-away if</th></tr>
+        <tr>
+          <td>Work design</td>
+          <td>Strategic client ownership. You sit with bank executives on roadmap, value, and expansion — not queue management.</td>
+          <td>The job is SLA / voice / ops leadership dressed as "customer."</td>
+        </tr>
+        <tr>
+          <td>Commercial leverage</td>
+          <td>Quota tied to expansion and transformation (ATS, consulting, managed services), not only FTE billing defense.</td>
+          <td>No visibility to book size, quota, or what "good" looks like in 12 months.</td>
+        </tr>
+        <tr>
+          <td>Operating model</td>
+          <td>Remote-first or light hybrid; travel is client-driven and predictable. LA base is viable.</td>
+          <td>Unstated relocation, heavy India-hours overlap as the default, or 50%+ travel with no book rationale.</td>
+        </tr>
+        <tr>
+          <td>Level &amp; pay</td>
+          <td>Band and OTE commensurate with enterprise quota-carrying work. Comp conversation this week, not after three loops.</td>
+          <td>Title inflation downward; total comp materially below your current market.</td>
+        </tr>
+        <tr>
+          <td>Substance</td>
+          <td>Room to bring governance, AI, and infrastructure judgment into the account — not only relationship maintenance.</td>
+          <td>"Just keep the client happy and introduce sales."</td>
+        </tr>
+        <tr>
+          <td>Path</td>
+          <td>A visible path into larger portfolios or practice leadership if you perform.</td>
+          <td>Dead-end farm role with no ATS attachment.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>06 · Suggested call flow (25–30 min)</h2>
+    <div class="card">
+      <ul class="clean">
+        <li><strong style="color:var(--ink)">0–3 min · Open.</strong> Thank them. State the frame: "I want to understand the seat well enough to know if a hiring-manager conversation is the right next step."</li>
+        <li><strong style="color:var(--ink)">3–12 min · Let them talk.</strong> Role origin, why now, which banks, success in year one, team around the seat.</li>
+        <li><strong style="color:var(--ink)">12–20 min · Your filters.</strong> Walk the table in §05. Be specific on remote, travel, book, and comp architecture.</li>
+        <li><strong style="color:var(--ink)">20–25 min · Position.</strong> 30-second frame + one proof story (quota overperformance + a governed tech transformation).</li>
+        <li><strong style="color:var(--ink)">25–30 min · Close.</strong> "If the book, band, and motion line up, I would like an intro to the hiring manager this week, plus the written JD and the grade/comp range."</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>07 · Questions that create signal</h2>
+    <div class="q"><strong>ORIGIN</strong>Was this seat created to grow ATS inside existing banks, or to stabilize a delivery relationship that is at risk?</div>
+    <div class="q"><strong>BOOK</strong>Which accounts map to this role, what is the current revenue, and what does a strong year-one expansion look like in dollars?</div>
+    <div class="q"><strong>MOTION</strong>How is success split between retention, cross-sell of Core Business Services, and Advanced Technology Solutions?</div>
+    <div class="q"><strong>POWER</strong>Who do I actually sit with on the client side — COO / CIO / Head of Operations — and who is my internal counterpart in delivery and sales?</div>
+    <div class="q"><strong>MODEL</strong>Where is the role based, what is the expected travel cadence, and is LA a workable home base?</div>
+    <div class="q"><strong>ECONOMICS</strong>What is the grade, base / variable split, and the OTE range for someone entering with a proven enterprise book?</div>
+    <div class="q"><strong>AI REALITY</strong>Where are agentic solutions already in production in banking (onboarding, KYC, lending, servicing), versus still in pilot?</div>
+    <div class="q"><strong>NEXT</strong>If this conversation is productive, can we schedule the hiring manager before the week is out?</div>
+  </section>
+
+  <section>
+    <h2>08 · Green flags / red flags</h2>
+    <div class="grid-2">
+      <div class="card">
+        <span class="tag ok">Green</span>
+        <ul class="clean">
+          <li>Named banking portfolio with executive access.</li>
+          <li>ATS / agentic attached to the number, not just FTE defense.</li>
+          <li>Recruiter can speak to grade and band on this call or within 24 hours.</li>
+          <li>Hiring manager is a commercial or industry leader, not only ops.</li>
+          <li>They want a strategist who can hold a transformation narrative.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag warn">Red</span>
+        <ul class="clean">
+          <li>Vague "global customer" language with no book, no quota, no buyer.</li>
+          <li>Heavy voice / BPO DNA with little digital or AI attached.</li>
+          <li>Comp deferred indefinitely; "depends on interview feedback."</li>
+          <li>Relocation pressure or unexplained on-site requirement.</li>
+          <li>Role is backfill for a burned-out relationship with no change in offer.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>09 · Proof you can drop if asked</h2>
+    <div class="card">
+      <div class="callout">
+        <p><strong style="color:var(--ink)">Pattern, not a script.</strong> One number, one buyer, one constraint, one outcome.</p>
+      </div>
+      <p style="margin-top:10px">"The work I am known for is taking an enterprise technology agenda — cloud, data, AI, risk — and turning it into a qualified motion with a C-level buyer. That has produced more than $50M in revenue impact and 344% of quota in a year, with repeat 100%+ attainment. Banks do not have a technology problem so much as an operating-model and governance problem. That is the conversation I want to be in."</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>10 · Close line</h2>
+    <div class="card">
+      <p class="lead">"This is interesting if the seat is truly a growth mandate on banking clients who are moving work into AI-led operations. If you can share the mapped accounts, the grade and range, and an intro to the hiring manager, I can give you a clear yes/no on next round within a day."</p>
+    </div>
+    <div class="note">
+      <strong>Source note.</strong> The Gemini share link (share.google/aimode/…) was blocked by Google's automated-traffic check from this environment, so this brief is reconstructed from your stated search criteria, public Genpact banking / GRM postings, and 2025–2026 company context. Paste the missing specifics from your Gemini thread (exact "what I'm looking for" list, any numbers they already shared, recruiter name) and this document can be locked to the real conversation in one pass.
+    </div>
+  </section>
+
+  <footer>
+    GENPACT GCM BANKING · RECRUITER BRIEF · 01 SEP 2026 · CANDIDATE WORKING COPY
+  </footer>
+</body>
+</html>
